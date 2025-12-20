@@ -75,4 +75,7 @@ public class Client implements CrudEntity {
     public void delete() {
         System.out.println("Deleted: " + getClientDetails());
     }
+    public List<LibraryItem> getBorrowedItems() {
+    return borrowedItems;
+   }
 }
