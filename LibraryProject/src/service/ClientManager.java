@@ -22,6 +22,10 @@ public class ClientManager {
 
     public void deleteClient(int id) throws ItemNotFoundException {
         Client c = getClientById(id);
+             if(!c.getBorrowedItems().isEmpty()) {
+            System.out.println("Client must Return all borrowed items before deletion.");
+            return;
+        }
         clients.remove(c);
     }
 
